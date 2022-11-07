@@ -8,8 +8,10 @@ services:
     image: app
     container_name: my-app
     command: "bash ./runapp.sh"
-
+    environment:
+    - CONNECTION_STRING
   db:
+    image: postgres
     container_name: postgres
     restart: always
     expose:
